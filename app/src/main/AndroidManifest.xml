@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ltnc20211">
         <activity
+            android:name=".sinhvien.RegisterSVActivity"
+            android:exported="false" />
+        <activity
             android:name=".quanly.HomeQLActivity"
             android:exported="false" />
         <activity
@@ -35,8 +38,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>

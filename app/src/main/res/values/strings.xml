@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Ltnc20211</string>
+    <string name="welcome_text">CẢM ƠN BẠN ĐÃ SỬ DỤNG ỨNG DỤNG. VUI LÒNG CHỌN CHỨC NĂNG</string>
+    <string name="quan_ly">QUẢN LÝ</string>
+    <string name="sinhvien">SINH VIÊN</string>
+</resources>

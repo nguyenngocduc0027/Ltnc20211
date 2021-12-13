@@ -51,13 +51,14 @@ public class LoginQLActivity extends AppCompatActivity {
             btn_login.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    Intent login = new Intent(v.getContext(),HomeQLActivity.class);
                     firebaseAuth.signInWithEmailAndPassword(log_email.getText().toString(),log_password.getText().toString())
                             .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()){
                                         Toast.makeText(LoginQLActivity.this, "Login Successfully", Toast.LENGTH_LONG).show();
+                                        startActivity(login);
                                     } else {
                                         Toast.makeText(LoginQLActivity.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
                                     }

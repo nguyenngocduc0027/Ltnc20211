@@ -3,8 +3,11 @@ package com.example.ltnc20211.quanly.qlsv;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -24,6 +27,7 @@ public class QLSVActivity extends AppCompatActivity {
     private ListView list_sv;
     private ArrayList<SinhVien> sinhVienArrayList;
     private SinhVienAdapter adapter;
+    private Button btn_add_sv_big;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +36,7 @@ public class QLSVActivity extends AppCompatActivity {
 
 
         list_sv = findViewById(R.id.list_sv);
+        btn_add_sv_big = findViewById(R.id.btn_add_sv_big);
 
 
         // tạo danh sách sinh viên
@@ -55,6 +60,18 @@ public class QLSVActivity extends AppCompatActivity {
 
         // tạo adapter cho listview
         list_sv.setAdapter(adapter);
+
+
+
+        // Gọi layout thêm sinh viên
+        btn_add_sv_big.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(),AddSVActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     // Lấy danh sách sinh viên từ firebase
@@ -70,11 +87,11 @@ public class QLSVActivity extends AppCompatActivity {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                     // chuyển đổi dữ liệu qua class SinhVien
                     SinhVien sinhVien = dataSnapshot.getValue(SinhVien.class);
-                    if (sinhVien != null) {
-                        // thêm sinh viên vào list_sv
-                        sinhVien.setMssv(dataSnapshot.getKey());
-                        adapter.add(sinhVien);
-                    }
+                    // thêm sinh viên vào list_sv
+                    assert sinhVien != null;
+                    sinhVien.setMssv(dataSnapshot.getKey());
+                    adapter.add(sinhVien);
+
                 }
             }
 

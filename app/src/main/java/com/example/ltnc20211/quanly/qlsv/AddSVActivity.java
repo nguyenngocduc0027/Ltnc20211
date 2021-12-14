@@ -2,10 +2,13 @@ package com.example.ltnc20211.quanly.qlsv;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.Toast;
 
 import com.example.ltnc20211.R;
@@ -17,11 +20,15 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Calendar;
+
 public class AddSVActivity extends AppCompatActivity {
 
     FirebaseAuth firebaseAuth;
     DatabaseReference databaseReference;
     FirebaseDatabase firebaseDatabase;
+
+    DatePickerDialog addpicker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +43,29 @@ public class AddSVActivity extends AppCompatActivity {
         TextInputEditText add_sdt = findViewById(R.id.add_sdt);
         TextInputEditText add_dc = findViewById(R.id.add_dc);
         TextInputEditText add_password = findViewById(R.id.add_password);
+
+
+        add_dob.setInputType(InputType.TYPE_NULL);
+        add_dob.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Calendar cldr = Calendar.getInstance();
+                int day = cldr.get(Calendar.DAY_OF_MONTH);
+                int month = cldr.get(Calendar.MONTH);
+                int year = cldr.get(Calendar.YEAR);
+                // date picker dialog
+                addpicker = new DatePickerDialog(AddSVActivity.this,
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                                add_dob.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
+                            }
+                        }, year, month, day);
+                addpicker.show();
+            }
+        });
+
+
 
         Button btn_add_sv = findViewById(R.id.btn_add_sv);
         Button btn_cancel = findViewById(R.id.btn_cancel);
@@ -58,13 +88,26 @@ public class AddSVActivity extends AppCompatActivity {
 
                 SinhVien sinhVien = new SinhVien(mssv,name,dob,email,sdt,dc,password);
 
-                databaseReference.child("SinhVien").child("users").child(mssv).setValue(sinhVien);
-                Toast.makeText(v.getContext(),"Thêm Thành Công",Toast.LENGTH_LONG).show();
-                Intent done_add = new Intent(v.getContext(), QLSVActivity.class);
-                startActivity(done_add);
+                if (mssv.trim().equals("")){
+                    Toast.makeText(v.getContext(),"MSSV Trống",Toast.LENGTH_LONG).show();
+                    return;
+                } else if (password.trim().length() < 6) {
+                    Toast.makeText(v.getContext(),"Mật Khẩu Tối Thiểu 8 Ký Tự",Toast.LENGTH_LONG).show();
+                    return;
+                } else {
+                    databaseReference.child("SinhVien").child("users").child(mssv).setValue(sinhVien);
+                    Toast.makeText(v.getContext(),"Thêm Thành Công",Toast.LENGTH_LONG).show();
+                    Intent done_add = new Intent(v.getContext(), QLSVActivity.class);
+                    startActivity(done_add);
+                }
+
+
 
             }
         });
+
+
+
 
 
         btn_cancel.setOnClickListener(new View.OnClickListener() {

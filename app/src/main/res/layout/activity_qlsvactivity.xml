@@ -12,4 +12,12 @@
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp" />
+
+    <Button
+        android:id="@+id/btn_add_sv_big"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="THÊM SINH VIÊN"
+        app:layout_constraintBottom_toBottomOf="@+id/list_sv"
+        tools:ignore="HardcodedText" />
 </androidx.constraintlayout.widget.ConstraintLayout>

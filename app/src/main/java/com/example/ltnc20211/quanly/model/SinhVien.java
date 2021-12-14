@@ -2,7 +2,9 @@ package com.example.ltnc20211.quanly.model;
 
 import androidx.annotation.NonNull;
 
-public class SinhVien {
+import java.io.Serializable;
+
+public class SinhVien implements Serializable {
     private String mssv, name, dob, email, sdt, dc, password;
 
     @NonNull

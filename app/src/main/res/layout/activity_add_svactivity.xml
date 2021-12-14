@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context=".quanly.qlsv.AddSVActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Thêm Sinh Viên"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="@color/teal_200"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mã Số Sinh Viên"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                tools:ignore="HardcodedText" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/add_mssv"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="20sp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Họ và Tên"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                tools:ignore="HardcodedText" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/add_name"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="20sp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                tools:ignore="HardcodedText" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/add_email"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="20sp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ngày Sinh"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                tools:ignore="HardcodedText" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/add_dob"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="20sp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Số Điện Thoại"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                tools:ignore="HardcodedText" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/add_sdt"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="20sp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Địa Chỉ"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                tools:ignore="HardcodedText" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/add_dc"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="20sp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mật Khẩu"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                tools:ignore="HardcodedText" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/add_password"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="20sp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                tools:ignore="HardcodedText" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_cancel"
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="50dp"
+                    android:text="Hủy"
+                    android:textSize="20sp"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"/>
+
+                <Button
+                    android:id="@+id/btn_add_sv"
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="50dp"
+                    android:text="Thêm"
+                    android:textSize="20sp"
+                    tools:ignore="HardcodedText" />
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

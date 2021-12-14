@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ltnc20211">
         <activity
+            android:name=".quanly.qlsv.EditSVActivity"
+            android:exported="false" />
+        <activity
+            android:name=".quanly.qlsv.AddSVActivity"
+            android:exported="false" />
+        <activity
             android:name=".quanly.qlsv.QLSVActivity"
             android:exported="false" />
         <activity

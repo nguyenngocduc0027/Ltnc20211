@@ -1,67 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="15dp">
 
-    <TextView
-        android:id="@+id/text_view_mssv"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Mã Số Sinh Viên "
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:layout_marginBottom="5dp"
-        tools:ignore="HardcodedText" />
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/text_view_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Họ tên sinh viên ở đây"
-        android:textSize="18sp"
-        android:textColor="@color/black"
-        android:textStyle="italic"
-        android:layout_marginBottom="5dp"
-        tools:ignore="HardcodedText" />
+        <TextView
+            android:id="@+id/text_view_mssv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mã Số Sinh Viên "
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginBottom="5dp"
+            tools:ignore="HardcodedText" />
 
-    <TextView
-        android:id="@+id/text_view_dob"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ngày sinh sinh viên ở đây"
-        android:textColor="@color/black"
-        android:textStyle="italic"
-        android:layout_marginBottom="5dp"
-        tools:ignore="HardcodedText" />
+        <TextView
+            android:id="@+id/text_view_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Họ tên sinh viên ở đây"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:textStyle="italic"
+            android:layout_marginBottom="5dp"
+            tools:ignore="HardcodedText" />
 
-    <TextView
-        android:id="@+id/text_view_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Email sinh viên"
-        android:layout_marginBottom="5dp"
-        tools:ignore="HardcodedText" />
+        <TextView
+            android:id="@+id/text_view_dob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ngày sinh sinh viên ở đây"
+            android:textColor="@color/black"
+            android:textStyle="italic"
+            android:layout_marginBottom="5dp"
+            tools:ignore="HardcodedText" />
 
-    <TextView
-        android:id="@+id/text_view_sdt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:text="Số Điện thoại"
-        tools:ignore="HardcodedText" />
+        <TextView
+            android:id="@+id/text_view_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email sinh viên"
+            android:layout_marginBottom="5dp"
+            tools:ignore="HardcodedText" />
 
-    <TextView
-        android:id="@+id/text_view_dc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:text="Địa chỉ"
-        android:textStyle="italic"
-        tools:ignore="HardcodedText" />
+        <TextView
+            android:id="@+id/text_view_sdt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Số Điện thoại"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/text_view_dc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Địa chỉ"
+            android:textStyle="italic"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
 
 
-</LinearLayout>
+
+    <ImageView
+        android:id="@+id/btn_icon_menu"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="top|right"
+        android:src="@drawable/ic_baseline_menu_24"
+        tools:ignore="ContentDescription,RtlHardcoded" />
+
+
+</FrameLayout>

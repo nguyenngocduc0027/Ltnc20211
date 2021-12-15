@@ -111,8 +111,6 @@ public class EditSVActivity extends AppCompatActivity {
                 databaseReference.child("SinhVien").child("users").child(sinhVien.getMssv()).setValue(sinhVien);
                 finish();
                 Toast.makeText(v.getContext(),"Cập Nhật Thành Công",Toast.LENGTH_LONG).show();
-//                Intent done_edit = new Intent(v.getContext(), QLSVActivity.class);
-//                startActivity(done_edit);
             }
         });
 

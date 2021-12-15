@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.example.ltnc20211.quanly.LoginQLActivity;
+
 public class SplashScreenActivity extends AppCompatActivity {
 
     @Override
@@ -18,7 +20,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent splash_to_log = new Intent(SplashScreenActivity.this, WelcomeActivity.class);
+                Intent splash_to_log = new Intent(SplashScreenActivity.this, LoginQLActivity.class);
                 startActivity(splash_to_log);
             }
         }, 3000);

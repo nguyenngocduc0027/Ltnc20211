@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/text_view_mahp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mã Học Phần "
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginBottom="5dp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/text_view_tenhp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tên Học Phần"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:textStyle="italic"
+            android:layout_marginBottom="5dp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/text_view_tc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tín Chỉ"
+            android:textColor="@color/black"
+            android:textStyle="italic"
+            android:layout_marginBottom="5dp"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+
+
+
+    <ImageView
+        android:id="@+id/btn_icon_menu_mh"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="top|right"
+        android:src="@drawable/ic_baseline_menu_24"
+        tools:ignore="ContentDescription,RtlHardcoded" />
+
+
+</FrameLayout>

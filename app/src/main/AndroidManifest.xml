@@ -10,6 +10,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ltnc20211">
         <activity
+            android:name=".quanly.qlgv.EditGVActivity"
+            android:exported="false" />
+        <activity
+            android:name=".quanly.qlgv.AddGVActivity"
+            android:exported="false" />
+        <activity
+            android:name=".quanly.qlgv.QLGVActivity"
+            android:exported="false" />
+        <activity
+            android:name=".quanly.qlmh.EditMHActivity"
+            android:exported="false" />
+        <activity
+            android:name=".quanly.qlmh.AddMHActivity"
+            android:exported="false" />
+        <activity
+            android:name=".quanly.qlmh.QLMHActivity"
+            android:exported="false" />
+        <activity
             android:name=".quanly.qlsv.EditSVActivity"
             android:exported="false" />
         <activity

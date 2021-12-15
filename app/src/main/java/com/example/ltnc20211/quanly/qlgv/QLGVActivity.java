@@ -25,7 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class QLGVActivity extends AppCompatActivity {
-
+// Vũ Quang linh 
     private ListView list_gv;
     private ArrayList<GiangVien> giangVienArrayList;
     private GiangVienAdapter adapter;

@@ -45,28 +45,33 @@ public class LoginQLActivity extends AppCompatActivity {
             Intent auto_log = new Intent(LoginQLActivity.this, HomeQLActivity.class );
             startActivity(auto_log);
             finish();
-        } else {
+        }
 
             //click đăng nhập ứng dụng
             btn_login.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent login = new Intent(v.getContext(),HomeQLActivity.class);
-                    firebaseAuth.signInWithEmailAndPassword(log_email.getText().toString(),log_password.getText().toString())
-                            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                    if (task.isSuccessful()){
-                                        Toast.makeText(LoginQLActivity.this, "Login Successfully", Toast.LENGTH_LONG).show();
-                                        startActivity(login);
-                                    } else {
-                                        Toast.makeText(LoginQLActivity.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                    Intent login = new Intent(LoginQLActivity.this,HomeQLActivity.class);
+                    if (log_email.getText().toString().trim().equals("")){
+                        Toast.makeText(LoginQLActivity.this,"Email Trống",Toast.LENGTH_LONG).show();
+                        return;
+                    } else {
+                        firebaseAuth.signInWithEmailAndPassword(log_email.getText().toString(), log_password.getText().toString())
+                                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<AuthResult> task) {
+                                        if (task.isSuccessful()) {
+                                            Toast.makeText(LoginQLActivity.this, "Login Successfully", Toast.LENGTH_LONG).show();
+                                            startActivity(login);
+                                        } else {
+                                            Toast.makeText(LoginQLActivity.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                                        }
                                     }
-                                }
-                            });
+                                });
+                    }
                 }
             });
-        }
+
 
 
 

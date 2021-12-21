@@ -89,6 +89,7 @@ public class AddGVActivity extends AppCompatActivity {
                     Toast.makeText(v.getContext(),"Thêm Thành Công",Toast.LENGTH_LONG).show();
                     Intent done_add = new Intent(v.getContext(), QLGVActivity.class);
                     startActivity(done_add);
+                    finish();
                 }
 
 

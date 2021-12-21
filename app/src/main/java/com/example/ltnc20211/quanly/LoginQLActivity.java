@@ -5,8 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,10 +35,24 @@ public class LoginQLActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_qlactivity);
 
+
+
         TextView login_to_register = findViewById(R.id.text_goto_register);
         TextInputEditText log_email = findViewById(R.id.input_login_email_ql);
         TextInputEditText log_password = findViewById(R.id.input_login_password_ql);
         Button btn_login = findViewById(R.id.btn_login_ql_to_home);
+
+        ImageButton show_pass = findViewById(R.id.show_pass);
+        show_pass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (show_pass.isClickable()){
+                    log_password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                } else {
+                    log_password.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                }
+            }
+        });
 
 
         // kiểm tra xem tài khaorn hiện có đang đăng nhập hay ko

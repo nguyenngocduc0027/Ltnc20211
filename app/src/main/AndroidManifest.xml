@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ltnc20211">
         <activity
+            android:name=".quanly.qllh.AddLHActivity"
+            android:exported="false" />
+        <activity
             android:name=".quanly.qllh.QLLHActivity"
             android:exported="false" />
         <activity

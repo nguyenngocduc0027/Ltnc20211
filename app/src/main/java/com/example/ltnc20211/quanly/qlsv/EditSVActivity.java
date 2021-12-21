@@ -34,6 +34,9 @@ public class EditSVActivity extends AppCompatActivity {
     private Button btn_edit_sv,btn_cancel;
     private SinhVien sinhVien;
 
+    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+    String phonePattern = "[0-9]";
+
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,14 +106,25 @@ public class EditSVActivity extends AppCompatActivity {
                 String dob = edit_dob.getEditableText().toString();
                 String email = edit_email.getEditableText().toString();
                 String sdt = edit_sdt.getEditableText().toString();
-                String dc = edit_dc.getEditableText().toString();
+                String dc = edit_dc.getEditableText().toString().toUpperCase();
                 String password = edit_password.getEditableText().toString();
 
                 sinhVien = new SinhVien(mssv,name,dob,email,sdt,dc,password);
 
+                if (email.trim().matches(emailPattern) || email.isEmpty()){
+                    Toast.makeText(v.getContext(),"Email sai",Toast.LENGTH_LONG).show();
+                    return;
+                }else if (sdt.trim().matches(phonePattern) || sdt.trim().length() == 10 ){
+                    Toast.makeText(v.getContext(),"Số Điện Thoại Sai",Toast.LENGTH_LONG).show();
+                    return;
+                }else if (password.trim().length() < 6) {
+                    Toast.makeText(v.getContext(),"Mật Khẩu Tối Thiểu 8 Ký Tự",Toast.LENGTH_LONG).show();
+                    return;
+                } else {
                 databaseReference.child("SinhVien").child("users").child(sinhVien.getMssv()).setValue(sinhVien);
                 finish();
                 Toast.makeText(v.getContext(),"Cập Nhật Thành Công",Toast.LENGTH_LONG).show();
+                }
             }
         });
 

@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import com.example.ltnc20211.R;
 import com.example.ltnc20211.quanly.qlgv.QLGVActivity;
+import com.example.ltnc20211.quanly.qllh.QLLHActivity;
 import com.example.ltnc20211.quanly.qlmh.QLMHActivity;
 import com.example.ltnc20211.quanly.qlsv.QLSVActivity;
 import com.google.firebase.auth.FirebaseAuth;
@@ -37,6 +38,7 @@ public class HomeQLActivity extends AppCompatActivity {
             public void onClick(View v) {
                 firebaseAuth.signOut();
                 startActivity(log_out);
+                finish();
             }
         });
 
@@ -58,6 +60,15 @@ public class HomeQLActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent go_page_ql_mh = new Intent(v.getContext(), QLMHActivity.class);
                 startActivity(go_page_ql_mh);
+            }
+        });
+
+        Button go_to_ql_lh = findViewById(R.id.btn_ql_lh);
+        go_to_ql_lh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent go_page_ql_lh = new Intent(v.getContext(), QLLHActivity.class);
+                startActivity(go_page_ql_lh);
             }
         });
 

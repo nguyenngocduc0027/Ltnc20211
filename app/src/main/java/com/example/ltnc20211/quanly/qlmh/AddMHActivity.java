@@ -56,6 +56,7 @@ public class AddMHActivity extends AppCompatActivity {
                     Toast.makeText(v.getContext(),"Thêm Thành Công",Toast.LENGTH_LONG).show();
                     Intent done_add = new Intent(v.getContext(), QLMHActivity.class);
                     startActivity(done_add);
+                    finish();
                 }
 
 
@@ -67,7 +68,6 @@ public class AddMHActivity extends AppCompatActivity {
         btn_cancel_mh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 finish();
             }
         });

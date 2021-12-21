@@ -5,57 +5,101 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
+    android:gravity="center_horizontal"
     tools:context=".quanly.HomeQLActivity">
 
+    <TextView
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TRANG CHỦ"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:textColor="@color/black"/>
 
-    <Button
-        android:id="@+id/btn_ql_sv"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:text="SINH VIÊN"
-        tools:ignore="HardcodedText" />
+        <TableRow
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
 
-    <Button
-        android:id="@+id/btn_ql_mh"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:text="MÔN HỌC"
-        tools:ignore="HardcodedText" />
+            <Button
+                android:id="@+id/btn_ql_sv"
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+                android:text="SINH VIÊN"
+                tools:ignore="HardcodedText" />
 
-    <Button
-        android:id="@+id/btn_ql_lh"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:text="LỚP HỌC"
-        tools:ignore="HardcodedText" />
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="10dp"/>
 
-    <Button
-        android:id="@+id/btn_ql_diem"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:text="QL ĐIỂM"
-        tools:ignore="HardcodedText" />
+            <Button
+                android:id="@+id/btn_ql_mh"
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+                android:text="MÔN HỌC"
+                tools:ignore="HardcodedText" />
+        </TableRow>
 
-    <Button
-        android:id="@+id/btn_ql_gv"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:text="GIẢNG VIÊN"
-        tools:ignore="HardcodedText" />
+        <TableRow
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <Button
+                android:id="@+id/btn_ql_lh"
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+                android:text="LỚP HỌC"
+                tools:ignore="HardcodedText" />
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="10dp"/>
 
-    <Button
-        android:id="@+id/btn_profile_ql"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:text="THÔNG TIN"
-        tools:ignore="HardcodedText" />
+            <Button
+                android:id="@+id/btn_ql_diem"
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+                android:text="QL ĐIỂM"
+                tools:ignore="HardcodedText" />
+        </TableRow>
 
-    <Button
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:id="@+id/btn_logout"
-        android:text="LOGOUT"
-        tools:ignore="HardcodedText" />
+        <TableRow
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <Button
+                android:id="@+id/btn_ql_gv"
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+                android:text="GIẢNG VIÊN"
+                tools:ignore="HardcodedText" />
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="10dp"/>
+
+            <Button
+                android:id="@+id/btn_profile_ql"
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+                android:text="THÔNG TIN"
+                tools:ignore="HardcodedText" />
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+                android:id="@+id/btn_logout"
+                android:text="LOGOUT"
+                tools:ignore="HardcodedText" />
+        </TableRow>
 
 </LinearLayout>

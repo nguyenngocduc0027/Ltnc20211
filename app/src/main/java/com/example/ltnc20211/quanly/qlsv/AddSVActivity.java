@@ -1,5 +1,6 @@
 package com.example.ltnc20211.quanly.qlsv;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
@@ -17,24 +18,30 @@ import com.example.ltnc20211.quanly.RegisterQLActivity;
 import com.example.ltnc20211.quanly.model.SinhVien;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Calendar;
 
 public class AddSVActivity extends AppCompatActivity {
 
-    FirebaseAuth firebaseAuth;
     DatabaseReference databaseReference;
     FirebaseDatabase firebaseDatabase;
 
     DatePickerDialog addpicker;
 
+    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+    String phonePattern = "[0-9]";
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_svactivity);
-
 
         TextInputEditText add_mssv = findViewById(R.id.add_mssv);
         TextInputEditText add_name = findViewById(R.id.add_name);
@@ -43,6 +50,7 @@ public class AddSVActivity extends AppCompatActivity {
         TextInputEditText add_sdt = findViewById(R.id.add_sdt);
         TextInputEditText add_dc = findViewById(R.id.add_dc);
         TextInputEditText add_password = findViewById(R.id.add_password);
+
 
 
         add_dob.setInputType(InputType.TYPE_NULL);
@@ -75,7 +83,6 @@ public class AddSVActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 firebaseDatabase = FirebaseDatabase.getInstance();
-                firebaseAuth = FirebaseAuth.getInstance();
                 databaseReference = firebaseDatabase.getReference();
 
                 String mssv = add_mssv.getEditableText().toString();
@@ -83,15 +90,32 @@ public class AddSVActivity extends AppCompatActivity {
                 String dob = add_dob.getEditableText().toString();
                 String email = add_email.getEditableText().toString();
                 String sdt = add_sdt.getEditableText().toString();
-                String dc = add_dc.getEditableText().toString();
+                String dc = add_dc.getEditableText().toString().toUpperCase();
                 String password = add_password.getEditableText().toString();
 
                 SinhVien sinhVien = new SinhVien(mssv,name,dob,email,sdt,dc,password);
 
-                if (mssv.trim().equals("")){
+                if (mssv.isEmpty()){
                     Toast.makeText(v.getContext(),"MSSV Trống",Toast.LENGTH_LONG).show();
                     return;
-                } else if (password.trim().length() < 6) {
+                }
+                if (mssv.trim().length() != 8){
+                    Toast.makeText(v.getContext(),"MSSV Chưa Đủ",Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if (email.trim().matches(emailPattern)){
+                    Toast.makeText(v.getContext(),"Email sai",Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if (sdt.trim().matches(phonePattern)  ){
+                    Toast.makeText(v.getContext(),"Số Điện Thoại Sai",Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if(sdt.trim().length() == 10){
+                    Toast.makeText(v.getContext(),"Số Điện Thoại Chưa Chuẩn Định Dạng",Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if (password.trim().length() < 6) {
                     Toast.makeText(v.getContext(),"Mật Khẩu Tối Thiểu 8 Ký Tự",Toast.LENGTH_LONG).show();
                     return;
                 } else {
@@ -99,10 +123,8 @@ public class AddSVActivity extends AppCompatActivity {
                     Toast.makeText(v.getContext(),"Thêm Thành Công",Toast.LENGTH_LONG).show();
                     Intent done_add = new Intent(v.getContext(), QLSVActivity.class);
                     startActivity(done_add);
+                    finish();
                 }
-
-
-
             }
         });
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center_horizontal"
+    android:gravity="center"
     tools:context=".quanly.RegisterQLActivity">
 
     <ScrollView
@@ -22,7 +22,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="REGISTER QUAN LY"
+                android:text="ĐĂNG KÝ TÀI KHOẢN"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 android:textColor="@color/teal_200"
@@ -46,7 +46,7 @@
                 android:id="@+id/input_name_ql"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:hint="Name"
+                android:hint="Họ và Tên"
                 android:textSize="20sp"
                 android:layout_marginBottom="15dp"
                 android:layout_marginStart="30dp"
@@ -57,32 +57,49 @@
                 android:id="@+id/input_age_ql"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:hint="Age"
+                android:hint="Ngày Sinh"
                 android:textSize="20sp"
                 android:layout_marginBottom="15dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginEnd="30dp"
                 tools:ignore="HardcodedText" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/input_password_ql"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:hint="Password"
-                android:textSize="20sp"
-                android:layout_marginBottom="15dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginEnd="30dp"
-                tools:ignore="HardcodedText" />
+                android:orientation="horizontal"
+                android:gravity="start">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_password_ql"
+                    android:layout_width="320dp"
+                    android:layout_height="50dp"
+                    android:hint="Mật Khẩu"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="5dp"
+                    tools:ignore="HardcodedText" />
+
+                <ImageButton
+                    android:layout_width="24dp"
+                    android:layout_height="50dp"
+                    android:background="@color/white"
+                    android:src="@drawable/ic_show_24"
+                    android:id="@+id/show_pass_reg"/>
+
+            </LinearLayout>
+
+
 
 
             <Button
                 android:id="@+id/btn_register_ql_to_login"
                 android:layout_width="250dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="50dp"
-                android:text="REGISTER"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:text="ĐĂNG KÝ"
                 android:textSize="20sp"
                 tools:ignore="HardcodedText" />
 
@@ -91,9 +108,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:layout_marginBottom="50dp"
-                android:text="Do you have an account ? Login Now"
+                android:layout_marginBottom="30dp"
+                android:text="Đăng nhập nếu đã có tài khoản !"
                 tools:ignore="HardcodedText" />
+
+
 
 
         </LinearLayout>
